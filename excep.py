@@ -1,3 +1,5 @@
+# анализатор паролей пользователей: отсеивает пароли короче 10-ти
+min_password_length = 10
 logins_and_passwords = []
 try:
     #1. вход данных целого числа n
@@ -20,6 +22,6 @@ for i in range(number):
 # 3. анализ паролей
 for current_user in logins_and_passwords:
     # current_user = ['abc', '123456']
-    if len(current_user[1]) < 6:
+    if len(current_user[1]) < min_password_length:
         # print('У пользователя', login_password[0], 'пароль короткий')
         print(f'У пользователя {current_user[0]} пароль короткий')
